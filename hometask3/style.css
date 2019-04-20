@@ -30,7 +30,8 @@ main {
     background-color: #a1c8f5;
 }
 
-.goods-item {
+.goods-item,
+.basket-item {
     display: inline-block;
     width: 150px;
     height: 100px;
@@ -40,8 +41,21 @@ main {
     margin: 10px 20px;
 }
 .goods-item h3,
-.goods-item p {
+.goods-item p,
+.basket-item h3,
+.basket-item p {
     background-color: #498cda;
     color: white;
     text-align: center;   
+}
+.basket-list {
+    position: fixed;
+    width: 85%;
+    height: 60%;
+    top: 50px;
+    left: 5%;
+    margin: 0 auto;
+    display: block;
+    opacity: 0;
+    background-color: #4958da;
 }
