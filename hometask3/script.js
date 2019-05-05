@@ -35,9 +35,10 @@ function makeGETRequest (url) {
 const API_URL = 'https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses';
 
 class GoodsItem {
-        constructor (title, price) {
+        constructor (title, price, number) {
             this.title = title;
             this.price = price;
+            this.number = number;
          }
         render() {
             return `<div class="goods-item"><h3> ${this.title} </h3><p> ${this.price} </p> <button class="add-button" type="button">Добавить в корзину</button></div>`;
@@ -66,8 +67,8 @@ class GoodsList {
     }
     render() {
         let listHtml = '' ;
-        this.goods.forEach(good => {
-        const goodItem = new GoodsItem(good.product_name, good.price);
+        this.goods.forEach((good,i) => {
+        const goodItem = new GoodsItem(good.product_name, good.price,i);
         listHtml += goodItem.render();
         });
         document.querySelector('.goods-list').innerHTML = listHtml;
@@ -125,7 +126,7 @@ class GoodsBasket {
         `;
     }
     deleteFromBasket () {
-        
+
     }
 }
 
@@ -146,4 +147,6 @@ list.fetchGoods().then(() => {
 list.render();
 }); 
 document.getElementsByClassName('cart-button')[0].addEventListener('click', () => basket.getBasket());
+//document.getElementsByClassName('add-button').forEach ((i) => {i.addEventListener('click', () => alert(`hi ${i}`));})
+//document.getElementsByClassName('add-button').forEach ((i) => {i.addEventListener('click', () => alert(`hi ${i}`));})
 console.log(list.calculate());      
