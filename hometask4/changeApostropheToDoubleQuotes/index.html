@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Change apostrophe to double quotes</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+    <h2>Hear you see a part of novel "Dracula" for the 4th of May</h2>   
+    <div class="dracula">fghfhf</div>
+    <button class="change" type="button">Заменить</button>
+</main>
+</body>
+<script>
+    let dracula = {
+        textD: 
+        `4 May--I found that my landlord had got a letter from the Count, directing him to secure the best place on the coach for me; but on making inquiries as to details he seemed somewhat reticent, and pretended that he could not understand my German.
+        This could not be true, because up to then he had understood it perfectly; at least, he answered my questions exactly as if he did.
+        He and his wife, the old lady who had received me, looked at each other in a frightened sort of way. He mumbled out that the money had been sent in a letter, and that was all he knew. When I asked him if he knew Count Dracula, and could tell me anything of his castle, both he and his wife crossed themselves, and, saying that they knew nothing at all, simply refused to speak further. It was so near the time of starting that I had no time to ask anyone else, for it was all very mysterious and not by any means comforting.
+        Just before I was leaving, the old lady came up to my room and said in a hysterical way: 'Must you go? Oh! Young Herr, must you go?' She was in such an excited state that she seemed to have lost her grip of what German she knew, and mixed it all up with some other language which I did not know at all. I was just able to follow her by asking many questions. When I told her that I must go at once, and that I was engaged on important business, she asked again:
+        'Do you know what day it is?' I answered that it was the fourth of May. She shook her head as she said again:
+        'Oh, yes! I know that! I know that, but do you know what day it is?'
+        On my saying that I did not understand, she went on:
+        'It is the eve of St. George's Day. Do you not know that tonight, when the clock strikes midnight, all the evil things in the world will have full sway? Do you know where you are going, and what you are going to?' She was in such evident distress that I tried to comfort her, but without effect. Finally, she went down on her knees and implored me not to go; at least to wait a day or two before starting.
+        It was all very ridiculous but I did not feel comfortable. However, there was business to be done, and I could allow nothing to interfere with it.
+        I tried to raise her up, and said, as gravely as I could, that I thanked her, but my duty was imperative, and that I must go.
+        She then rose and dried her eyes, and taking a crucifix from her neck offered it to me.
+        I did not know what to do, for, as an English Churchman, I have been taught to regard such things as in some measure idolatrous, and yet it seemed so ungracious to refuse an old lady meaning so well and in such a state of mind.
+        She saw, I suppose, the doubt in my face, for she put the rosary round my neck and said, 'For your mother's sake,' and went out of the room.
+        I am writing up this part of the diary whilst I am waiting for the coach, which is, of course, late; and the crucifix is still round my neck.
+        Whether it is the old lady's fear, or the many ghostly traditions of this place, or the crucifix itself, I do not know, but I am not feeling nearly as easy in my mind as usual.
+        If this book should ever reach Mina before I do, let it bring my goodbye. Here comes the coach!`,
+            // `4 May--I found that my landlord had got a letter from the Count, directing him to secure the best place on the coach for me; but on making inquiries as to details he seemed somewhat reticent, and pretended that he could not understand my German.<br>
+            // This could not be true, because up to then he had understood it perfectly; at least, he answered my questions exactly as if he did.<br>
+            // He and his wife, the old lady who had received me, looked at each other in a frightened sort of way. He mumbled out that the money had been sent in a letter, and that was all he knew. When I asked him if he knew Count Dracula, and could tell me anything of his castle, both he and his wife crossed themselves, and, saying that they knew nothing at all, simply refused to speak further. It was so near the time of starting that I had no time to ask anyone else, for it was all very mysterious and not by any means comforting.<br>
+            // Just before I was leaving, the old lady came up to my room and said in a hysterical way: "Must you go? Oh! Young Herr, must you go?" She was in such an excited state that she seemed to have lost her grip of what German she knew, and mixed it all up with some other language which I did not know at all. I was just able to follow her by asking many questions. When I told her that I must go at once, and that I was engaged on important business, she asked again:<br>            
+            // "Do you know what day it is?" I answered that it was the fourth of May. She shook her head as she said again:<br>            
+            // "Oh, yes! I know that! I know that, but do you know what day it is?"<br>            
+            // On my saying that I did not understand, she went on:<br>            
+            // "It is the eve of St. George's Day. Do you not know that tonight, when the clock strikes midnight, all the evil things in the world will have full sway? Do you know where you are going, and what you are going to?" She was in such evident distress that I tried to comfort her, but without effect. Finally, she went down on her knees and implored me not to go; at least to wait a day or two before starting.<br>
+            // It was all very ridiculous but I did not feel comfortable. However, there was business to be done, and I could allow nothing to interfere with it.<br>
+            // I tried to raise her up, and said, as gravely as I could, that I thanked her, but my duty was imperative, and that I must go.<br>            
+            // She then rose and dried her eyes, and taking a crucifix from her neck offered it to me.<br>            
+            // I did not know what to do, for, as an English Churchman, I have been taught to regard such things as in some measure idolatrous, and yet it seemed so ungracious to refuse an old lady meaning so well and in such a state of mind.<br>            
+            // She saw, I suppose, the doubt in my face, for she put the rosary round my neck and said, "For your mother's sake," and went out of the room.<br>            
+            // I am writing up this part of the diary whilst I am waiting for the coach, which is, of course, late; and the crucifix is still round my neck.<br>            
+            // Whether it is the old lady's fear, or the many ghostly traditions of this place, or the crucifix itself, I do not know, but I am not feeling nearly as easy in my mind as usual.<br>            
+            // If this book should ever reach Mina before I do, let it bring my goodbye. Here comes the coach!`,
+
+        change(){
+            this.textD=this.textD.replace (/\'/g,'"');
+            this.textD=this.textD.replace (/\b\"\b/g,'\'');
+            document.getElementsByClassName('dracula')[0].innerHTML = this.textD; 
+        }
+    }
+console.log (document.getElementsByClassName('dracula'));
+document.getElementsByClassName('dracula')[0].innerHTML = dracula.textD;   
+document.getElementsByClassName('change')[0].addEventListener('click', () => dracula.change());
+</script>
+</html>

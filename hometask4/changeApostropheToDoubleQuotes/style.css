@@ -1,0 +1,27 @@
+* {
+    margin: 0 auto;
+    padding: 0;
+    background: #ffffff;
+}
+header {
+    height: auto;
+    width: 100%;
+}
+main {
+    padding: 10px; 
+}
+.dracula {
+    min-height: 10px;
+    width: 100%;
+}
+.change {
+    width: 100px;
+    padding: 5px;
+    margin: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.change:hover {
+    background: #009641;
+}
